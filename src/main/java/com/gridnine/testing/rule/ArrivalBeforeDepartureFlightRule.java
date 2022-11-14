@@ -13,26 +13,34 @@ public class ArrivalBeforeDepartureFlightRule implements FlightRule {
 
     @Override
     public boolean test(Flight flight) {
-        boolean isMatch = flight.getSegments().stream()
-                .noneMatch(segment -> segment.getArrivalDate().isBefore(segment.getDepartureDate()));
+//        boolean isMatch = flight.getSegments().stream()
+//                .noneMatch(segment -> segment.getArrivalDate().isBefore(segment.getDepartureDate()));
+        boolean isMatch = true;
 
         var iterator = flight.getSegments().iterator();
 
             var departureDate = LocalDateTime.MIN;
-            var arrivalDate = LocalDateTime.MAX;
+            var arrivalDate = LocalDateTime.MIN;
 
             while (iterator.hasNext() && isMatch){
                 var segment = iterator.next();
                 departureDate = segment.getDepartureDate();
 
-                isMatch = departureDate.isBefore(arrivalDate);
+                isMatch = checkNextSegmentDates(departureDate, arrivalDate);
 
                 arrivalDate = segment.getArrivalDate();
+                isMatch = isMatch ? checkSegmentDates(departureDate, arrivalDate) : isMatch;
             }
 
         return isMatch;
     }
 
+    private boolean checkNextSegmentDates(LocalDateTime departureDate, LocalDateTime arrivalDate){
+        return !departureDate.isBefore(arrivalDate);
+    }
 
+    private boolean checkSegmentDates(LocalDateTime departureDate, LocalDateTime arrivalDate){
+        return departureDate.isBefore(arrivalDate);
+    }
 
 }

@@ -47,4 +47,22 @@ class ArrivalBeforeDepartureFlightRuleTest extends BaseUnitTest {
 
         assertFalse(result);
     }
+
+    @Test
+    void testFlightMatchSeveralSegments() {
+        Flight testFlight = TestFlightBuilder.createFlight(testDate, testDate.plusHours(2), testDate.plusHours(5), testDate.plusHours(6));
+
+        var result = arrivalBeforeDepartureFlightRule.test(testFlight);
+
+        assertTrue(result);
+    }
+
+    @Test
+    void testFlightNotMatchSeveralSegments2() {
+        Flight testFlight = TestFlightBuilder.createFlight(testDate, testDate.plusHours(2), testDate.plusHours(1), testDate.plusHours(3));
+
+        var result = arrivalBeforeDepartureFlightRule.test(testFlight);
+
+        assertFalse(result);
+    }
 }
