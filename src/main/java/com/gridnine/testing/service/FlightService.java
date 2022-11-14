@@ -1,4 +1,4 @@
-package com.gridnine.testing.util;
+package com.gridnine.testing.service;
 
 import com.gridnine.testing.model.Flight;
 import com.gridnine.testing.model.Segment;
@@ -6,9 +6,10 @@ import com.gridnine.testing.model.Segment;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class FlightUtil {
+public class FlightService implements IFlightService{
 
-    public static Duration evaluateTransferTime(Flight flight){
+    @Override
+    public Duration evaluateTransferTime(Flight flight) {
         var segmentDuration = Duration.ZERO;
         var departureDate = LocalDateTime.MAX;
         var arrivalDate = LocalDateTime.MIN;

@@ -20,7 +20,6 @@ public class Main {
         FlightFilter filter1 = new FlightFilter();
         FlightFilter filter2 = new FlightFilter();
         FlightFilter filter3 = new FlightFilter();
-        FlightFilter filter4 = new FlightFilter();
 
         filter1.applyRule(new DepartureBeforeNowFlightRule());
         filter2.applyRule(new ArrivalBeforeDepartureFlightRule());
