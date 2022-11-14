@@ -6,5 +6,5 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ExtendWith(MockitoExtension.class)
-public abstract class BaseUnitClass {
+public abstract class BaseUnitTest {
 }

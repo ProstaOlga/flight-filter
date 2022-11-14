@@ -1,5 +1,6 @@
 package com.gridnine.testing.rule;
 
+import com.gridnine.testing.BaseUnitTest;
 import com.gridnine.testing.data.TestFlightBuilder;
 import com.gridnine.testing.model.Flight;
 import com.gridnine.testing.util.FlightUtil;
@@ -17,7 +18,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TransferTimeFlightRuleTest {
+class TransferTimeFlightRuleTest extends BaseUnitTest {
 
     LocalDateTime testDate = LocalDateTime.now();
 

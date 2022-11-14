@@ -1,6 +1,6 @@
 package com.gridnine.testing.service;
 
-import com.gridnine.testing.BaseUnitClass;
+import com.gridnine.testing.BaseUnitTest;
 import com.gridnine.testing.data.TestFlightBuilder;
 import com.gridnine.testing.model.Flight;
 import com.gridnine.testing.model.FlightFilter;
@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
-class FlightFilterServiceTest extends BaseUnitClass {
+class FlightFilterServiceTest extends BaseUnitTest {
 
     private List<Flight> flights = TestFlightBuilder.createFlights();
 

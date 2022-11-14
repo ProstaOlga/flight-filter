@@ -1,5 +1,6 @@
 package com.gridnine.testing.rule;
 
+import com.gridnine.testing.BaseUnitTest;
 import com.gridnine.testing.data.TestFlightBuilder;
 import com.gridnine.testing.model.Flight;
 import org.junit.jupiter.api.BeforeAll;
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ArrivalBeforeDepartureFlightRuleTest {
+class ArrivalBeforeDepartureFlightRuleTest extends BaseUnitTest {
 
     private LocalDateTime testDate = LocalDateTime.now();
 
